@@ -3,7 +3,7 @@ name: Deploy Frontend and Backend
 on:
   push:
     branches:
-      - master
+      - production
 
 jobs:
   deploy:
