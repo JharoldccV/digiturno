@@ -11,5 +11,9 @@
     "mysql",
     "pgsql",
     "postgresql"
-  ]
+  ],
+  "yaml.schemas": {
+    "file:///c%3A/Users/moren/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml",
+    "https://json.schemastore.org/github-workflow.json": "file:///c%3A/Users/moren/OneDrive/Escritorio/Digiturno/.github/workflows/deploy.yml"
+  }
 }
