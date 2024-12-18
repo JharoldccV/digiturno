@@ -25,11 +25,12 @@ resource "aws_instance" "web_server" {
     sudo systemctl start apache2
     sudo systemctl enable apache2
     # Configurar directorios para frontend y backend
-    sudo mkdir -p /var/www/frontend /var/www/backend
     # Clonar repositorios desde GitHub
     cd /var/www
-    sudo git clone ${var.github_frontend_repo} frontend
-    sudo git clone ${var.github_backend_repo} backend
+    sudo git clone ${var.github_repo} 
+    sudo mv digiturno/frontend frontend
+    sudo mv digiturno/backend backend
+    sudo rm -rf digiturno
     # Configurar permisos
     sudo chown -R ubuntu:www-data /var/www/frontend /var/www/backend
     sudo chmod -R 775 /var/www/frontend /var/www/backend
