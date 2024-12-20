@@ -1,6 +1,8 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-const apiUrl = "https://digiturnov2.ccvalledupar.org.co/api";
+
+// Get Environment variable values
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const httpClient = axios.create({
   baseURL: apiUrl,

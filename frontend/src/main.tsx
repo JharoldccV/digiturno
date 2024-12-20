@@ -16,6 +16,7 @@ import ClientTypeProvider from "./providers/client-type-provider.tsx";
 import ServiceProvider from "./providers/service-provider.tsx";
 import "./pusher.js";
 import AttendantProvider from "./providers/attendant-provider.tsx";
+import JuridicalCaseProvider from "./providers/juridical-case-provider.tsx";
 
 const RootApp = () => {
   return (
@@ -31,7 +32,9 @@ const RootApp = () => {
                       <ShiftProvider>
                         <AttendantProvider>
                           <AuthenticatedProvider>
-                            <App />
+                            <JuridicalCaseProvider>
+                              <App />
+                            </JuridicalCaseProvider>
                           </AuthenticatedProvider>
                         </AttendantProvider>
                       </ShiftProvider>

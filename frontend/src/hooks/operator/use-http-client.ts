@@ -1,9 +1,6 @@
 import httpClient from "@/config/http";
 import { toast } from "react-toastify";
 
-// export const host = "192.168.1.9";
-// export const host = "localhost";
-
 const useHttpClient = () => {
   const showError = (statusCode: number) => {
     const messages: {
@@ -55,7 +52,7 @@ const useHttpClient = () => {
     if (statusCode === 403 || statusCode === 401 || statusCode === 400) {
       toast.error(
         errorMessageMapping[errors.message] ||
-          `${statusCode}: Error desconocido`,
+        `${statusCode}: Error desconocido`,
         {
           position: "top-right",
           autoClose: 5000,
