@@ -65,12 +65,11 @@ const CasesModal: React.FC<CasesModalProps> = ({
 
   return (
     <div
-      className={`${
-        isOpen ? 'fixed' : 'hidden'
-      } inset-0 bg-black/50 flex justify-center items-center z-50`}
+      className={`${isOpen ? 'fixed' : 'hidden'
+        } inset-0 bg-black/50 flex justify-center items-center z-50`}
     >
       <div className="bg-white w-5/6 h-4/5 max-w-7xl rounded-lg shadow-lg p-6 overflow-hidden">
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center mb-4 ">
           <h2 className="text-2xl font-bold">
             {isEditing ? 'Editar Caso' : 'Lista de Casos'}
           </h2>

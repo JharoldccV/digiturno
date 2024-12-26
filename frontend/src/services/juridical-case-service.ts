@@ -40,6 +40,7 @@ export default class HttpJuridicalCaseService {
     return this.instance;
   }
 
+  // Obtiene los casos jurídicos de un abogado
   public async getJuridicalCases(
     attendantId: number,
   ): Promise<JuridicalCase[]> {
@@ -49,6 +50,10 @@ export default class HttpJuridicalCaseService {
     return response.data;
   }
 
+
+  // Crea un nuevo caso jurídico y agrega una observación.
+  // Recibe el id del abogado, el asunto, el id del cliente y la observación.
+  // Retorna el caso jurídico creado.
   public async createJuridicalCase(
     attendantId: string,
     subject: string,
@@ -67,6 +72,8 @@ export default class HttpJuridicalCaseService {
     return juridicalCase;
   }
 
+
+  // Agrega una observación al caso
   public async addObservation(juridicalCase: JuridicalCase, observation: string, attendantId: number): Promise<void> {
     await this.httpClient.post(`/attendants/${juridicalCase.attendant.id}/juridical_cases/${juridicalCase.id}/observations`, {
       attendant_id: attendantId,
@@ -74,6 +81,8 @@ export default class HttpJuridicalCaseService {
     });
   }
 
+
+  // Elimina una observación del caso
   public async removeObservation(juridicalCase: JuridicalCase, observationId: number): Promise<void> {
     await this.httpClient.delete(`/attendants/${juridicalCase.attendant.id}/juridical_cases/${juridicalCase.id}/observations/${observationId}`);
   }
